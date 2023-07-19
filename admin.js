@@ -76,6 +76,10 @@ document.getElementById("adauga").innerHTML += `
   $('.conserva').height(350);
   $('.conserva').width(200);
 }
+  if(ok === 2){
+    $('.conserva').height(450);
+    $('.conserva').width(300);
+  }
 const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
 
 inputs.forEach(input => {
@@ -83,16 +87,22 @@ inputs.forEach(input => {
 })
 }
 
-function schimbaM() {
+function schimbaL() {
   $('.conserva').height(450);
   $('.conserva').width(300);
-  ok = 1;
+  ok = 2;
 }
 
 function schimbaS() {
   $('.conserva').height(350);
   $('.conserva').width(200);
   ok = 0;
+}
+
+function schimbaM() {
+  $('.conserva').height(400);
+  $('.conserva').width(250);
+  ok = 1;
 }
 
 function remove() {
