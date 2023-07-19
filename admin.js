@@ -65,13 +65,39 @@ function adaugaElement() {
   let nume = document.getElementById("inputNume").value;
   let pret = document.getElementById("inputPret").value;
   let specs = document.getElementById("inputSpec").value;
-document.getElementById("adauga").innerHTML += `
-  <div class='conserva'>
-    <h2>${nume}</h2>
-    <h2>${pret}</h2>
-    <h2><strong>${specs}</strong></h2>
-  </div>
-  `;
+  console.log(pret);
+  if (nume==""||pret==""||specs=="") {
+    alert('produs incomplet');
+    const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
+  inputs.forEach(input => {
+    input.value = '';
+  })
+  }
+  else 
+  {
+  const produse = document.getElementById('adauga');
+  const conserva = document.createElement('DIV');
+  conserva.setAttribute("class", "conserva")
+  produse.appendChild(conserva);
+  
+  const numeHead = document.createElement('H2');
+  const numeVal = document.createTextNode(nume); 
+  numeHead.appendChild(numeVal);
+
+  const pretHead = document.createElement('H2');
+  const pretVal = document.createTextNode(pret.toString());
+  pretHead.appendChild(pretVal);
+
+  const specsHead = document.createElement('H2');
+  const strong = document.createElement('STRONG');
+  const specsVal = document.createTextNode(specs);
+  specsHead.appendChild(strong);
+  strong.appendChild(specsVal);
+
+  conserva.appendChild(numeHead);
+  conserva.appendChild(pretHead);
+  conserva.appendChild(specsHead);
+
   if(ok === 0){
   $('.conserva').height(350);
   $('.conserva').width(200);
@@ -81,6 +107,7 @@ const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
 inputs.forEach(input => {
   input.value = '';
 })
+}
 }
 
 function schimbaM() {

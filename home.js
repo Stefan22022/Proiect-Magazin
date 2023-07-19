@@ -52,15 +52,6 @@ function adaugaProduse(){
   
 }
 
- 
-// let input = document.getElementById("remove");
-// input.addEventListener("keypress", function(event) {
-//   if (event.key === "Enter") {
-//     event.preventDefault();
-//     document.getElementById("remove-product").click();
-//   }
-// });
-
 const nrInput = document.getElementById("remove");
 console.log(nrInput);
 
