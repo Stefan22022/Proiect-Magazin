@@ -1,6 +1,3 @@
-
-let i = 0;
-
 function myFunction() {
     let x = document.getElementById('CritIn');
     let y = document.getElementById('CritOut');
@@ -15,8 +12,6 @@ function myFunction() {
         y.style.display = "none";
       }
   }
-
- 
 
 function myFunction1() {
     let x = document.getElementById('pret');
@@ -33,32 +28,30 @@ function myFunction1() {
       }
   }
 
-function changeStyle(){
-    let element = document.getElementsByClassName("poza");
-    element.style.width = "100px";
-    element.style.height = "100px";
+function schimbaL() {
+  $('.conserva').height(450);
+  $('.conserva').width(300);
 }
 
-function adaugaProduse(){
-  ++i;
-  const produse = document.getElementById('prod');
-  const produs = document.createElement('DIV');
-  const div = document.createElement('DIV');
-  const nr = document.createElement('H1');
-  produs.setAttribute("id", i.toString());
-  produse.appendChild(produs);
-  produs.appendChild(div);
-  div.appendChild(nr);
-  
-}
-
-const nrInput = document.getElementById("remove");
-console.log(nrInput);
-
-function stergeProduse() {
-  const produse = document.getElementById('prod');
-  const produs = document.getElementById(1);
-  produse.removeChild(produs);
+function schimbaS() {
+  $('.conserva').height(350);
+  $('.conserva').width(200);
 }
 
 
+
+const administatori = {
+  username: 'username',
+  password: 'password'
+};
+
+function dispare() {
+document.getElementById("login").style.display ="none";
+}
+
+function verifica() {
+  if(administatori.username === document.getElementById('username').value && administatori.password === document.getElementById('password').value){
+    let element = document.getElementById("login");
+    element.style.display ="block";
+}
+}

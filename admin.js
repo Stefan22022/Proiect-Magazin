@@ -102,6 +102,10 @@ function adaugaElement() {
   $('.conserva').height(350);
   $('.conserva').width(200);
 }
+  if(ok === 2){
+    $('.conserva').height(450);
+    $('.conserva').width(300);
+  }
 const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
 
 inputs.forEach(input => {
@@ -110,10 +114,10 @@ inputs.forEach(input => {
 }
 }
 
-function schimbaM() {
+function schimbaL() {
   $('.conserva').height(450);
   $('.conserva').width(300);
-  ok = 1;
+  ok = 2;
 }
 
 function schimbaS() {
@@ -122,7 +126,8 @@ function schimbaS() {
   ok = 0;
 }
 
-function remove() {
-  let x = document.getElementById('remove').value;
-  console.log('x');
+function schimbaM() {
+  $('.conserva').height(400);
+  $('.conserva').width(250);
+  ok = 1;
 }
