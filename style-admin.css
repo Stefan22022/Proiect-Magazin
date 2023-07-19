@@ -1,0 +1,137 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin:0;
+}
+
+.proprietati {
+    display: flex;
+    transform: translate(75%);
+    padding-left: 10px;
+    border: 0;
+    margin:5px;
+}
+
+#add {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index:100;
+}
+
+.parametru {
+    margin: 0;
+    padding: 5px;
+    background-color: aquamarine;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: 550;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:black;
+    border: 2px solid rgb(79, 3, 255);
+    width: 300px;
+} 
+
+.sortare {
+    height:fit-content;
+}
+
+.parametru:hover {
+    background-color: #51ea55;
+}
+
+.filtreaza {
+    font-size: xx-large;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color:#6200ff;
+    background-color: aquamarine;
+    width: 300px;
+    padding: 5px;
+    border: 2px solid rgb(79, 3, 225);
+    text-align: center;  
+}
+
+.poza {
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    border-radius: 16%;
+}
+
+.produse > div {
+    width: 300px;
+    height: 450px;
+    background-color: rgb(119, 171, 219);
+    border-radius: 30px;
+    margin: 25px;
+}
+
+.produse {
+    align-items: center;
+    margin-left: 330px;
+    margin-top: 50px;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(5em, 1fr));
+    gap: 3px;
+}
+
+h2 {
+    color: rgb(20, 25, 104) !important;
+    padding-left: 10px;
+}
+
+.proprietati {
+    display: flex;
+    transform: translate(75%);
+    padding-left: 10px;
+    border: 0;
+    margin: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.header > h1 {
+    font-size: 50px; 
+    color:aqua;
+    align-content: center;
+    padding: 13px;
+    margin-right:250px;
+    margin-left: 250px;
+}
+
+.header {
+    background-color: blue;
+    width: 100%;
+    height: 90px;
+    display: flex;
+}
+
+.search-bar{ 
+    position: absolute;
+    top: 90px;
+    right:0px;
+    height:40px;
+    width:15%;
+    font-size:35px;
+    color:blueviolet;
+    border-radius:20px 0 20px 0;
+}
+
+.search-bar:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+.admin {
+    position: absolute;
+    margin: 0px;
+    top: 20px;
+    right: 40px;
+    z-index: 100;
+}
