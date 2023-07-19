@@ -104,8 +104,3 @@ function schimbaM() {
   $('.conserva').width(250);
   ok = 1;
 }
-
-function remove() {
-  let x = document.getElementById('remove').value;
-  console.log('x');
-}

@@ -42,3 +42,19 @@ function schimbaM() {
   $('.conserva').height(400);
   $('.conserva').width(250);
 }
+
+const administatori = {
+  username: 'username',
+  password: 'password'
+};
+
+function dispare() {
+document.getElementById("login").style.display ="none";
+}
+
+function verifica() {
+  if(administatori.username === document.getElementById('username').value && administatori.password === document.getElementById('password').value){
+    let element = document.getElementById("login");
+    element.style.display ="block";
+}
+}
