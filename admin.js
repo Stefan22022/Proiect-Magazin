@@ -77,7 +77,7 @@ function adaugaElement() {
   {
   const produse = document.getElementById('adauga');
   const conserva = document.createElement('DIV');
-  conserva.setAttribute("class", "conserva")
+  conserva.setAttribute("class", "conserva");
   produse.appendChild(conserva);
   
   const numeHead = document.createElement('H2');
