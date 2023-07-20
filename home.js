@@ -38,7 +38,10 @@ function schimbaS() {
   $('.conserva').width(200);
 }
 
-
+function schimbaM() {
+  $('.conserva').height(400);
+  $('.conserva').width(250);
+}
 
 const administatori = {
   username: 'username',
