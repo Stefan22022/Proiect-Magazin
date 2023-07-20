@@ -163,7 +163,6 @@ body {
     position: absolute !important; 
     right: 100px;
     top: 260px;
-
 }
 
 .admin {
@@ -180,4 +179,26 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin:0;
+}
+
+#username, #password {
+    padding: 2.5px 0 2.5px 0;
+    text-align: center;
+    display: flow-root;
+    margin-left: 30%;
+    border: 0px solid white;
+}
+
+#username:hover, #password:hover {
+    background-color:rgb(253, 253, 215);
+}
+
+#verificare {
+    width:fit-content;
+    margin-left: 70%;
+}
+
+#verificare:hover {
+    background-color: chartreuse;
+    border: 1px solid white;
 }

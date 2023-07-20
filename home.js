@@ -55,6 +55,11 @@ document.getElementById("login").style.display ="none";
 function verifica() {
   if(administatori.username === document.getElementById('username').value && administatori.password === document.getElementById('password').value){
     let element = document.getElementById("login");
-    element.style.display ="block";
-}
+    element.style.display ="block";}
+    const inputs = document.querySelectorAll('#username, #password');
+    
+    inputs.forEach(input => {
+      input.value = '';
+    });
+    
 }
