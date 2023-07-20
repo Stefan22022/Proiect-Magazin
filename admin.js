@@ -104,3 +104,7 @@ function schimbaM() {
   $('.conserva').width(250);
   ok = 1;
 }
+
+function alerta() {
+  alert('Esti sigur ca vrei sa te deconectezi?');
+}
