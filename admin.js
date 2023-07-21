@@ -27,7 +27,7 @@ const produse = [
         culoare: ['albastru', 'rosu','mov', 'galben'],
         ecran: 'ultraHD'
     }
-]
+];
 
 let ok = 1;
 
@@ -110,7 +110,7 @@ const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
 
 inputs.forEach(input => {
   input.value = '';
-})
+});
 }
 }
 
@@ -133,5 +133,5 @@ function schimbaM() {
 }
 
 function alerta() {
-  alert('Esti sigur ca vrei sa te deconectezi?');
+  alert('Te vei deconecta!');
 }
