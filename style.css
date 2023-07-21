@@ -155,7 +155,7 @@ body {
     margin-top: 50px;
     position: absolute;
     display: grid;
-    grid-template-columns: repeat(3, minmax(5em, 1fr));
+    grid-template-columns: repeat(4, minmax(5em, 1fr));
     gap: 3px;
 }
 
