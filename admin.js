@@ -83,6 +83,10 @@ function adaugaElement() {
     conserva.setAttribute("class", "conserva");
     produse.appendChild(conserva);
     
+    const remove = document.createElement('BUTTON');
+    remove.setAttribute("class", "remove-item");
+    remove.setAttribute("onclick", "stergeProd(this)");
+
     const numeHead = document.createElement('H2');
     const numeVal = document.createTextNode(nume); 
     numeHead.appendChild(numeVal);
@@ -91,20 +95,16 @@ function adaugaElement() {
     const pretVal = document.createTextNode(pret.toString());
     pretHead.appendChild(pretVal);
 
-    const remove = document.createElement('BUTTON');
-    remove.setAttribute("class", "remove-item");
-    remove.setAttribute("onclick", "stergeProd(this)");
-
     const specsHead = document.createElement('H2');
     const strong = document.createElement('STRONG');
     const specsVal = document.createTextNode(specs);
     specsHead.appendChild(strong);
     strong.appendChild(specsVal);
 
+    conserva.appendChild(remove);
     conserva.appendChild(numeHead);
     conserva.appendChild(pretHead);
     conserva.appendChild(specsHead);
-    conserva.appendChild(remove);
 
     conserva.setAttribute("id", i.toString());
 

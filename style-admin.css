@@ -66,6 +66,7 @@ input::-webkit-inner-spin-button {
     background-color: rgb(119, 171, 219);
     border-radius: 30px;
     margin: 25px;
+    display: flow-root;
 }
 
 .produse {
@@ -174,7 +175,6 @@ h2 {
 }
 
 .remove-item {
-    position: absolute;
     margin: 1.5px;
     background-color: rgb(255, 0, 0);
     width:37px;
@@ -186,4 +186,9 @@ h2 {
     width:35px;
     height:35px;
     margin: 6px;
+}
+
+h2 {
+    position: relative;
+  
 }
