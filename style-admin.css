@@ -89,6 +89,12 @@ h2 {
     padding-left: 10px;
     border: 0;
     margin: 5px;
+    min-height: 25px;
+}
+
+#inputSpec {
+    min-height: 25px;
+    margin-left: -10px;
 }
 
 * {
@@ -168,6 +174,16 @@ h2 {
 }
 
 .remove-item {
-    width: 40px;
-    height: 40px;
+    position: absolute;
+    margin: 1.5px;
+    background-color: rgb(255, 0, 0);
+    width:37px;
+    height:37px;
+    border-radius: 50%;
+}
+
+.remove-item :hover {
+    width:35px;
+    height:35px;
+    margin: 6px;
 }

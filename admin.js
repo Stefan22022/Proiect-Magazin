@@ -67,7 +67,6 @@ function adaugaElement() {
   let nume = document.getElementById("inputNume").value;
   let pret = document.getElementById("inputPret").value;
   let specs = document.getElementById("inputSpec").value;
-
   if (nume==""||pret==""||specs=="") {
     alert('produs incomplet');
     
