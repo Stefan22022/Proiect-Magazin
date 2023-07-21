@@ -61,57 +61,72 @@ function myFunction() {
       }
   }
 
+let i = 0;
+
 function adaugaElement() {
   let nume = document.getElementById("inputNume").value;
   let pret = document.getElementById("inputPret").value;
   let specs = document.getElementById("inputSpec").value;
-  console.log(pret);
+
   if (nume==""||pret==""||specs=="") {
     alert('produs incomplet');
+    
     const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
-  inputs.forEach(input => {
+    inputs.forEach(input => {
     input.value = '';
-  })
+    })
   }
   else 
   {
-  const produse = document.getElementById('adauga');
-  const conserva = document.createElement('DIV');
-  conserva.setAttribute("class", "conserva");
-  produse.appendChild(conserva);
-  
-  const numeHead = document.createElement('H2');
-  const numeVal = document.createTextNode(nume); 
-  numeHead.appendChild(numeVal);
+    ++i;
+    const produse = document.getElementById('adauga');
+    const conserva = document.createElement('DIV');
+    conserva.setAttribute("class", "conserva");
+    produse.appendChild(conserva);
+    
+    const numeHead = document.createElement('H2');
+    const numeVal = document.createTextNode(nume); 
+    numeHead.appendChild(numeVal);
 
-  const pretHead = document.createElement('H2');
-  const pretVal = document.createTextNode(pret.toString());
-  pretHead.appendChild(pretVal);
+    const pretHead = document.createElement('H2');
+    const pretVal = document.createTextNode(pret.toString());
+    pretHead.appendChild(pretVal);
 
-  const specsHead = document.createElement('H2');
-  const strong = document.createElement('STRONG');
-  const specsVal = document.createTextNode(specs);
-  specsHead.appendChild(strong);
-  strong.appendChild(specsVal);
+    const remove = document.createElement('BUTTON');
+    remove.setAttribute("class", "remove-item");
+    remove.setAttribute("onclick", "stergeProd(this)");
 
-  conserva.appendChild(numeHead);
-  conserva.appendChild(pretHead);
-  conserva.appendChild(specsHead);
+    const specsHead = document.createElement('H2');
+    const strong = document.createElement('STRONG');
+    const specsVal = document.createTextNode(specs);
+    specsHead.appendChild(strong);
+    strong.appendChild(specsVal);
 
-  if(ok === 0){
-  $('.conserva').height(350);
-  $('.conserva').width(200);
-}
-  if(ok === 2){
-    $('.conserva').height(450);
-    $('.conserva').width(300);
+    conserva.appendChild(numeHead);
+    conserva.appendChild(pretHead);
+    conserva.appendChild(specsHead);
+    conserva.appendChild(remove);
+
+    conserva.setAttribute("id", i.toString());
+
+    if(ok === 0){
+    $('.conserva').height(350);
+    $('.conserva').width(200);
+    }
+    if(ok === 2){
+      $('.conserva').height(450);
+      $('.conserva').width(300);
+    }
+    const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
+
+    inputs.forEach(input => {
+    input.value = '';
+    });
   }
-const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
-
-inputs.forEach(input => {
-  input.value = '';
-});
 }
+
+function stergeProd(ok) {
+  ok.parentNode.remove();
 }
 
 function schimbaL() {
@@ -133,5 +148,26 @@ function schimbaM() {
 }
 
 function alerta() {
-  alert('Te vei deconecta!');
+  confirm('Te vei deconecta!');
 }
+
+function cautaProd() {
+  // Declare variables
+  let input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('cauta');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}  
+
