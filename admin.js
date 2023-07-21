@@ -65,21 +65,28 @@ function adaugaElement() {
   let nume = document.getElementById("inputNume").value;
   let pret = document.getElementById("inputPret").value;
   let specs = document.getElementById("inputSpec").value;
-  console.log(pret);
   if (nume==""||pret==""||specs=="") {
     alert('produs incomplet');
     const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
   inputs.forEach(input => {
     input.value = '';
-  })
+  });
   }
   else 
   {
+  let idConserva = 5;
+  let idButon = 'x.' + idConserva;
+  const butonSterge = document.createElement('BUTTON');
   const produse = document.getElementById('adauga');
   const conserva = document.createElement('DIV');
   conserva.setAttribute("class", "conserva");
+  butonSterge.setAttribute("class", "buton-stergere");
+  butonSterge.setAttribute("id", idButon);
+  conserva.setAttribute("id", idConserva++);
   produse.appendChild(conserva);
-  
+  conserva.appendChild(butonSterge);
+  butonSterge.setAttribute("onclick", "stergeProdus(this)");
+
   const numeHead = document.createElement('H2');
   const numeVal = document.createTextNode(nume); 
   numeHead.appendChild(numeVal);
@@ -133,5 +140,13 @@ function schimbaM() {
 }
 
 function alerta() {
-  alert('Te vei deconecta!');
+  confirm('Te vei deconecta!');
+}
+
+function stergeProdus(obj) {
+  let string = obj.id;
+  let rezultat = string.replace(/\D/g, "");
+  const produse = document.getElementById('adauga');
+  const produs = document.getElementById(rezultat);
+  produse.removeChild(produs);
 }
