@@ -1,3 +1,34 @@
+const produse = [
+  aspirator = {
+      id: 719,
+      cod: 1,
+      tehnologie: 'avansata',
+      pret: 500,
+      culoare: 'galben'
+  },
+  masca_de_scafadru = {
+      id: 649,
+      cod: 2,
+      marime: ['s', 'm', 'l', 'xl'],
+      culaore: 'alastru',
+      pret: 50
+  },
+  termopan = {
+      id: 274,
+      cod: 3,
+      straturi: 2,
+      pret: 2000,
+  },
+  telefon = {
+      id: 400,
+      cod: 4,
+      model: 'ultimul',
+      pret: 10000,
+      culoare: ['albastru', 'rosu','mov', 'galben'],
+      ecran: 'ultraHD'
+  }
+];
+
 function myFunction() {
     let x = document.getElementById('CritIn');
     let y = document.getElementById('CritOut');
@@ -63,3 +94,8 @@ function verifica() {
     });
     
 }
+
+window.onload = function(){
+  let id_ = produse[0].id;
+  document.getElementById('1').textContent = id_;
+};
