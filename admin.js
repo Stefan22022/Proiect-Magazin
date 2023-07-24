@@ -1,3 +1,5 @@
+"use strict";
+
 const produse = [
     aspirator = {
         id: 719,
@@ -151,21 +153,17 @@ function alerta() {
 }
 
 function cautaProd() {
-  // Declare variables
-  let input, filter, ul, li, a, i, txtValue;
+  let input, filter, conserva, a, i, txtValue;
   input = document.getElementById('cauta');
   filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName('li');
-
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
+  conserva = document.getElementsByClassName('conserva');
+  for (i = 0; i < conserva.length; i++) {
+    a = conserva[i];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+      conserva[i].style.display = "";
     } else {
-      li[i].style.display = "none";
+      conserva[i].style.display = "none";
     }
   }
 }  
