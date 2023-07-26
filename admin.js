@@ -61,7 +61,7 @@ function myFunction() {
       }
   }
 
-let i = 0;
+let i = 4;
 
 function adaugaElement() {
   let nume = document.getElementById("inputNume").value;
@@ -81,32 +81,41 @@ function adaugaElement() {
     const produse = document.getElementById('adauga');
     const conserva = document.createElement('DIV');
     conserva.setAttribute("class", "conserva");
+    conserva.setAttribute("id", i.toString());
     produse.appendChild(conserva);
     
     const remove = document.createElement('BUTTON');
     remove.setAttribute("class", "remove-item");
     remove.setAttribute("onclick", "stergeProd(this)");
 
+    const modify = document.createElement('BUTTON');
+    modify.setAttribute("class", "modify-item");
+    modify.setAttribute("onclick", "modificaProd(this)");
+    modify.setAttribute("data-toggle", "modal");
+    modify.setAttribute("data-target", "#exampleModal");
+
     const numeHead = document.createElement('H2');
+    numeHead.setAttribute("id", "numeHead");
     const numeVal = document.createTextNode(nume); 
     numeHead.appendChild(numeVal);
 
     const pretHead = document.createElement('H2');
+    pretHead.setAttribute("id", "pretHead");
     const pretVal = document.createTextNode(pret.toString());
     pretHead.appendChild(pretVal);
 
     const specsHead = document.createElement('H2');
+    specsHead.setAttribute("id", "specsHead");
     const strong = document.createElement('STRONG');
     const specsVal = document.createTextNode(specs);
     specsHead.appendChild(strong);
     strong.appendChild(specsVal);
 
     conserva.appendChild(remove);
+    conserva.appendChild(modify);
     conserva.appendChild(numeHead);
     conserva.appendChild(pretHead);
     conserva.appendChild(specsHead);
-
-    conserva.setAttribute("id", i.toString());
 
     if(ok === 0){
     $('.conserva').height(350);
@@ -125,7 +134,36 @@ function adaugaElement() {
 }
 
 function stergeProd(ok) {
+  const x = parseInt(ok.parentNode.id);
   ok.parentNode.remove();
+  for (let j = x+1; j <= i; j++) {
+    let y = j-1;
+    document.getElementById(j.toString()).id = y.toString();
+  }
+  i--;
+
+}
+
+function modificaProd(x) {
+  let nume = document.getElementById("inputNume1");
+  let pret = document.getElementById("inputPret1");
+  let spec = document.getElementById("inputSpec1");
+  let proprietati = document.getElementById(x.parentNode.id).getElementsByTagName('h2');
+
+  nume.value = proprietati[0].innerText;
+  pret.value = proprietati[1].innerText;
+  spec.value = proprietati[2].innerText;
+}
+
+function salveazaProd(x) {
+  let nume = document.getElementById("inputNume1");
+  let pret = document.getElementById("inputPret1");
+  let spec = document.getElementById("inputSpec1");
+  let proprietati = document.getElementById(x.parentNode.id).getElementsByTagName('h2');
+
+  nume.value = proprietati[0].innerText;
+  pret.value = proprietati[1].innerText;
+  spec.value = proprietati[2].innerText;
 }
 
 function schimbaL() {
