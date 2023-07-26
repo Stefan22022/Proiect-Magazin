@@ -1,5 +1,3 @@
-"use strict";
-
 const produse = [
     aspirator = {
         id: 719,
@@ -75,7 +73,7 @@ function adaugaElement() {
     const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
     inputs.forEach(input => {
     input.value = '';
-    })
+    });
   }
   else 
   {
@@ -153,18 +151,47 @@ function alerta() {
 }
 
 function cautaProd() {
-  let input, filter, conserva, a, i, txtValue;
-  input = document.getElementById('cauta');
+  let input, filter, conserva, a, txtValue;
+  input = document.getElementById('searchbar');
   filter = input.value.toUpperCase();
   conserva = document.getElementsByClassName('conserva');
-  for (i = 0; i < conserva.length; i++) {
-    a = conserva[i];
+  for (let j = 0; j < conserva.length; j++) {
+    a = conserva[j];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      conserva[i].style.display = "";
+      conserva[j].style.display = "";
     } else {
-      conserva[i].style.display = "none";
+      conserva[j].style.display = "none";
     }
   }
-}  
+}
 
+let x;
+
+function editeazaProd(obj) {
+  let nume = document.getElementById("inputNume1");
+  let pret = document.getElementById("inputPret1");
+  let spec = document.getElementById("inputSpec1");
+  let proprietati = document.getElementById(obj.parentNode.id).getElementsByTagName('h2');
+  x = obj.parentNode.id;
+  nume.value = proprietati[0].innerText;
+  pret.value = proprietati[1].innerText;
+  spec.value = proprietati[2].innerText;
+}
+
+function salvatiProd() {
+  let proprietati = $(`#${x} h2`);
+  for (let j=0; j<proprietati.length; j++) {
+  switch (j) {
+    case 0: 
+    proprietati[j].textContent = document.getElementById('inputNume1').value;
+    break;
+    case 1: 
+    proprietati[j].textContent = document.getElementById('inputPret1').value;
+    break;
+    default: 
+    proprietati[j].textContent = document.getElementById('inputSpec1').value;
+  }
+  console.log(proprietati[j]);
+ }
+}

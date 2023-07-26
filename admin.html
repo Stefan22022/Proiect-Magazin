@@ -17,26 +17,34 @@
           <div class="welcome">Admin page</div>
           <div class="companyName">Nae&Dragan</div>
         </div>
-        <input type="search" id="cauta" placeholder="Search" class="search-bar" onkeyup="cautaProd()"/>
+        <input type="search" id="searchbar" placeholder="Search" class="search-bar" onkeyup="cautaProd()"/>
           <button class="admin" onclick="alerta()"><a href="./index.html">deconectare</a></button>
-          <button id="add" data-toggle="modal" data-target="#exampleModalCenter" class="adaugaProdus">
+          <button id="add" data-toggle="modal" data-target="#modalAdaugaProdus" class="adaugaProdus">
                   Adauga produs
           </button>
         <div class="produse" id="adauga">
             <div class="conserva" id="1">
-              <button class="remove-item" id="x.1" onclick="stergeProd(this)"></button>
+              <button class="remove-item" onclick="stergeProd(this)"></button>
+              <button data-toggle="modal" onclick="editeazaProd(this)" data-target="#modalEditeazaProdus" class="edit-item"></button>
               <img class="poza" src="./poze/download.jpeg"/>
+              <h2>Termopan</h2>
+              <h2>1500</h2>
+              <h2>Straturi: 2</h2>
             </div>
             <div class="conserva" id="2">
-              <button class="remove-item" id="x.2" onclick="stergeProd(this)"></button>
+              <button class="remove-item" onclick="stergeProd(this)"></button>
+              <button data-toggle="modal" onclick="editeazaProd(this)" data-target="#modalEditeazaProdus" class="edit-item"></button>
               <img class="poza" src="./poze/images (1).jpeg"/>
+              <h2>Ochelari</h2>
+              <h2>200</h2>
+              <h2>Straturi: 5</h2>
             </div>
             <div class="conserva" id="3">
-              <button class="remove-item" id="x.3" onclick="stergeProd(this)"></button>
+              <button class="remove-item" onclick="stergeProd(this)"></button>
               <img class="poza" src="./poze/images (2).jpeg"/>
             </div>
             <div class="conserva" id="4">
-              <button class="remove-item" id="x.4" onclick="stergeProd(this)"></button>
+              <button class="remove-item" onclick="stergeProd(this)"></button>
               <img class="poza" src="./poze/hqdefault.jpg"/>
             </div>
         </div>
@@ -61,11 +69,13 @@
         </div>
     </div>
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <!-- Modal pentru adaugare produse -->
+
+    <div class="modal fade" id="modalAdaugaProdus" tabindex="-1" role="dialog" aria-labelledby="modalAdaugaProdusTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <h5 class="modal-title" id="modalAdaugaProdusLongTitle">Adaugati produs</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -76,11 +86,35 @@
               <textarea  cols="25" id="inputSpec" class="proprietati" placeholder="Specificatii"></textarea>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" onclick="adaugaElement()" data-dismiss="modal">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Anulati</button>
+              <button type="button" class="btn btn-primary" onclick="adaugaElement()" data-dismiss="modal">Introdu produs</button>
             </div>
           </div>
         </div>
     </div>
+
+    <!-- Modal pentru editare produse -->
+
+    <div class="modal fade" id="modalEditeazaProdus" tabindex="-1" role="dialog" aria-labelledby="modalEditeazaProdusTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalEditeazaProdusLongTitle">Editati produsul</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="inputNume1" class="proprietati" placeholder="Numele produsului"/>
+            <input type="number" id="inputPret1" class="proprietati" placeholder="Pret"/>
+            <textarea  cols="25" id="inputSpec1" class="proprietati" placeholder="Specificatii"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Anulati</button>
+            <button type="button" class="btn btn-primary" onclick="salvatiProd()" data-dismiss="modal">Salvati modificarile</button>
+          </div>
+        </div>
+      </div>
+  </div>
 
 </body>
