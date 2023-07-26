@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 const produse = [
     aspirator = {
         id: 719,
@@ -31,7 +27,7 @@ const produse = [
         culoare: ['albastru', 'rosu','mov', 'galben'],
         ecran: 'ultraHD'
     }
-]
+];
 
 let ok = 1;
 
@@ -65,57 +61,71 @@ function myFunction() {
       }
   }
 
+let i = 0;
+
 function adaugaElement() {
   let nume = document.getElementById("inputNume").value;
   let pret = document.getElementById("inputPret").value;
   let specs = document.getElementById("inputSpec").value;
-  console.log(pret);
   if (nume==""||pret==""||specs=="") {
     alert('produs incomplet');
+    
     const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
-  inputs.forEach(input => {
+    inputs.forEach(input => {
     input.value = '';
-  })
+    })
   }
   else 
   {
-  const produse = document.getElementById('adauga');
-  const conserva = document.createElement('DIV');
-  conserva.setAttribute("class", "conserva");
-  produse.appendChild(conserva);
-  
-  const numeHead = document.createElement('H2');
-  const numeVal = document.createTextNode(nume); 
-  numeHead.appendChild(numeVal);
+    ++i;
+    const produse = document.getElementById('adauga');
+    const conserva = document.createElement('DIV');
+    conserva.setAttribute("class", "conserva");
+    produse.appendChild(conserva);
+    
+    const remove = document.createElement('BUTTON');
+    remove.setAttribute("class", "remove-item");
+    remove.setAttribute("onclick", "stergeProd(this)");
 
-  const pretHead = document.createElement('H2');
-  const pretVal = document.createTextNode(pret.toString());
-  pretHead.appendChild(pretVal);
+    const numeHead = document.createElement('H2');
+    const numeVal = document.createTextNode(nume); 
+    numeHead.appendChild(numeVal);
 
-  const specsHead = document.createElement('H2');
-  const strong = document.createElement('STRONG');
-  const specsVal = document.createTextNode(specs);
-  specsHead.appendChild(strong);
-  strong.appendChild(specsVal);
+    const pretHead = document.createElement('H2');
+    const pretVal = document.createTextNode(pret.toString());
+    pretHead.appendChild(pretVal);
 
-  conserva.appendChild(numeHead);
-  conserva.appendChild(pretHead);
-  conserva.appendChild(specsHead);
+    const specsHead = document.createElement('H2');
+    const strong = document.createElement('STRONG');
+    const specsVal = document.createTextNode(specs);
+    specsHead.appendChild(strong);
+    strong.appendChild(specsVal);
 
-  if(ok === 0){
-  $('.conserva').height(350);
-  $('.conserva').width(200);
-}
-  if(ok === 2){
-    $('.conserva').height(450);
-    $('.conserva').width(300);
+    conserva.appendChild(remove);
+    conserva.appendChild(numeHead);
+    conserva.appendChild(pretHead);
+    conserva.appendChild(specsHead);
+
+    conserva.setAttribute("id", i.toString());
+
+    if(ok === 0){
+    $('.conserva').height(350);
+    $('.conserva').width(200);
+    }
+    if(ok === 2){
+      $('.conserva').height(450);
+      $('.conserva').width(300);
+    }
+    const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
+
+    inputs.forEach(input => {
+    input.value = '';
+    });
   }
-const inputs = document.querySelectorAll('#inputNume, #inputPret, #inputSpec');
-
-inputs.forEach(input => {
-  input.value = '';
-})
 }
+
+function stergeProd(ok) {
+  ok.parentNode.remove();
 }
 
 function schimbaL() {
@@ -135,3 +145,24 @@ function schimbaM() {
   $('.conserva').width(250);
   ok = 1;
 }
+
+function alerta() {
+  confirm('Te vei deconecta!');
+}
+
+function cautaProd() {
+  let input, filter, conserva, a, i, txtValue;
+  input = document.getElementById('cauta');
+  filter = input.value.toUpperCase();
+  conserva = document.getElementsByClassName('conserva');
+  for (i = 0; i < conserva.length; i++) {
+    a = conserva[i];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      conserva[i].style.display = "";
+    } else {
+      conserva[i].style.display = "none";
+    }
+  }
+}  
+

@@ -66,6 +66,7 @@ input::-webkit-inner-spin-button {
     background-color: rgb(119, 171, 219);
     border-radius: 30px;
     margin: 25px;
+    display: flow-root;
 }
 
 .produse {
@@ -89,6 +90,12 @@ h2 {
     padding-left: 10px;
     border: 0;
     margin: 5px;
+    min-height: 25px;
+}
+
+#inputSpec {
+    min-height: 25px;
+    margin-left: -10px;
 }
 
 * {
@@ -97,35 +104,46 @@ h2 {
     user-select: none;
 }
 
-.header > h1 {
-    font-size: 50px; 
-    color:aqua;
-    align-content: center;
-    padding: 13px;
-    margin-right:250px;
-    margin-left: 250px;
+.header {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 200px;
+    background: rgb(223, 252, 255);
 }
 
-.header {
-    background-color: blue;
-    width: 100%;
-    height: 90px;
-    display: flex;
+.welcome {
+    position: relative;
+    top: 70px;
+    font-size: 50px;
+    color: brown;
+    text-align: center;
+}
+
+.companyName {
+    position: absolute;
+    font-size: 30px;
+    top: 0px;
+    left: 100px;
+    color:burlywood;
 }
 
 .search-bar{ 
     position: absolute;
-    top: 90px;
-    right:0px;
-    height:40px;
-    width:15%;
-    font-size:35px;
-    color:blueviolet;
-    border-radius:20px 0 20px 0;
+    width: 15%;
+    height: 30px;
+    font-size: 15px;
+    right: 100px;
+    top: 220px;
+    background-color: rgb(223, 252, 255);
+    border-radius: 15px;
+    padding-left: 10px;
+    text-align: center;
 }
 
 .search-bar:hover {
-    background-color: rgb(221, 221, 221);
+    background-color:rgb(253, 253, 215);
 }
 
 .admin {
@@ -134,4 +152,43 @@ h2 {
     top: 20px;
     right: 40px;
     z-index: 100;
+}
+
+.adaugaProdus {
+    position: absolute;
+    width: 15%;
+    height: 30px;
+    font-size: 15px;
+    margin-left: 77.666666%;
+    background-color: rgb(223, 252, 255);
+    border-radius: 15px;
+    padding-left: 10px;
+    margin-top: 235px;
+}
+
+.adaugaProdus:hover {
+    background-color:rgb(253, 253, 215);
+}
+
+.dropdown {
+    width: fit-content;
+}
+
+.remove-item {
+    margin: 1.5px;
+    background-color: rgb(255, 0, 0);
+    width:37px;
+    height:37px;
+    border-radius: 50%;
+}
+
+.remove-item :hover {
+    width:35px;
+    height:35px;
+    margin: 6px;
+}
+
+h2 {
+    position: relative;
+  
 }
