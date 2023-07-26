@@ -61,7 +61,7 @@ function myFunction() {
       }
   }
 
-let i = 0;
+let i = 4;
 
 function adaugaElement() {
   let nume = document.getElementById("inputNume").value;
@@ -87,6 +87,12 @@ function adaugaElement() {
     remove.setAttribute("class", "remove-item");
     remove.setAttribute("onclick", "stergeProd(this)");
 
+    const modify = document.createElement('BUTTON');
+    modify.setAttribute("class", "edit-item");
+    modify.setAttribute("onclick", "editeazaProd(this)");
+    modify.setAttribute("data-toggle", "modal");
+    modify.setAttribute("data-target", "#modalEditeazaProdus");
+
     const numeHead = document.createElement('H2');
     const numeVal = document.createTextNode(nume); 
     numeHead.appendChild(numeVal);
@@ -102,6 +108,7 @@ function adaugaElement() {
     strong.appendChild(specsVal);
 
     conserva.appendChild(remove);
+    conserva.appendChild(modify);
     conserva.appendChild(numeHead);
     conserva.appendChild(pretHead);
     conserva.appendChild(specsHead);
@@ -125,7 +132,13 @@ function adaugaElement() {
 }
 
 function stergeProd(ok) {
+  const x = parseInt(ok.parentNode.id);
   ok.parentNode.remove();
+  for (let j = x+1; j <= i; j++) {
+    let y = j-1;
+    document.getElementById(j.toString()).id = y.toString();
+  }
+  i--;
 }
 
 function schimbaL() {
@@ -166,21 +179,21 @@ function cautaProd() {
   }
 }
 
-let x;
+let a;
 
 function editeazaProd(obj) {
   let nume = document.getElementById("inputNume1");
   let pret = document.getElementById("inputPret1");
   let spec = document.getElementById("inputSpec1");
   let proprietati = document.getElementById(obj.parentNode.id).getElementsByTagName('h2');
-  x = obj.parentNode.id;
+  a = obj.parentNode.id;
   nume.value = proprietati[0].innerText;
   pret.value = proprietati[1].innerText;
   spec.value = proprietati[2].innerText;
 }
 
 function salvatiProd() {
-  let proprietati = $(`#${x} h2`);
+  let proprietati = $(`#${a} h2`);
   for (let j=0; j<proprietati.length; j++) {
   switch (j) {
     case 0: 
