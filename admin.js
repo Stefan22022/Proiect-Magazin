@@ -141,7 +141,6 @@ function stergeProd(ok) {
     document.getElementById(j.toString()).id = y.toString();
   }
   i--;
-
 }
 
 function modificaProd(x) {
