@@ -4,6 +4,10 @@ input::-webkit-inner-spin-button {
     margin:0;
 }
 
+body {
+    margin: 0 0 0 0;
+}
+
 .proprietati {
     display: flex;
     transform: translate(75%);
@@ -17,6 +21,97 @@ input::-webkit-inner-spin-button {
     top: 20px;
     left: 40px;
     z-index:100;
+}
+
+#container {
+    background-color: bisque;
+    width: 0%;
+}
+
+.criteriu {
+    position: relative;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;;
+    border-radius: 3.5px;
+    height:30px;
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.criteriu:active {
+    scale: 0.99;
+}
+
+.hide-show {
+    position: relative;
+    height: 30px;
+    width: 100%;
+    bottom: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-width: 1px;
+    border-style: hidden;
+}
+
+.hide-show:active {
+    scale: 0.99
+
+}
+
+.pop {
+    position: relative;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;;
+    border-radius: 3.5px;
+    height:200px;
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+
+#pop-up > button {
+    position: absolute;
+    border-bottom-left-radius: 3.5px;
+    border-bottom-right-radius: 3.5px;
+}
+
+#CritIn {
+    position: relative;
+    height: fit-content;
+    width: 300px;
+    top: 20px;
+    left: 100px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 10px;
+}
+
+#CritOut {
+    position:relative;
+    height: fit-content;
+    width: 300px;
+    top: 20px;
+    left: 100px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.filtre {
+    position: relative;
+    left: 20px;
+    top: 10px;
+    font-size: 30px;
+    margin-bottom: 50px;
+
 }
 
 .parametru {
@@ -71,7 +166,7 @@ input::-webkit-inner-spin-button {
 
 .produse {
     align-items: center;
-    margin-left: 330px;
+    margin-left: 400px;
     margin-top: 50px;
     position: absolute;
     display: grid;
@@ -194,7 +289,7 @@ h2 {
 }
 
 .edit-item {
-    margin-left: 167px;
+    margin-left: 10%;
     background-color: rgb(243, 255, 80);
     width:37px;
     height:37px;

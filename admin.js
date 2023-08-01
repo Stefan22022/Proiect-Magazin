@@ -32,34 +32,34 @@ const produse = [
 let ok = 1;
 
 function myFunction() {
-    let x = document.getElementById("da");
-    let y = document.getElementById("da1");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-    if (y.style.display === "none") {
-        y.style.display = "block";
-      } else {
-        y.style.display = "none";
-      }
+  let x = document.getElementById('CritIn');
+  let y = document.getElementById('CritOut');
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
-
-  function myFunction1() {
-    let x = document.getElementById("da");
-    let y = document.getElementById("da1");
-    if (y.style.display === "none") {
+  if (y.style.display === "none") {
       y.style.display = "block";
     } else {
       y.style.display = "none";
     }
-    if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
+}
+
+function myFunction1() {
+  let x = document.getElementById('pret');
+  let y = document.getElementById('pop-up');
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
+  if (y.style.display === "none") {
+      y.style.display = "block";
+    } else {
+      y.style.display = "none";
+    }
+}
 
 let i = 4;
 

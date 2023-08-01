@@ -41,11 +41,19 @@
             </div>
             <div class="conserva" id="3">
               <button class="remove-item" onclick="stergeProd(this)"></button>
+              <button data-toggle="modal" onclick="editeazaProd(this)" data-target="#modalEditeazaProdus" class="edit-item"></button>
               <img class="poza" src="./poze/images (2).jpeg"/>
+              <h2>Termopan</h2>
+              <h2>1500</h2>
+              <h2>Straturi: 2</h2>
             </div>
             <div class="conserva" id="4">
               <button class="remove-item" onclick="stergeProd(this)"></button>
+              <button data-toggle="modal" onclick="editeazaProd(this)" data-target="#modalEditeazaProdus" class="edit-item"></button>
               <img class="poza" src="./poze/hqdefault.jpg"/>
+              <h2>Termopan</h2>
+              <h2>1500</h2>
+              <h2>Straturi: 2</h2>
             </div>
         </div>
     
@@ -60,13 +68,33 @@
               <a class="dropdown-item" onclick="schimbaL()">L</a>
             </div>
         </div>
-        <button onclick="myFunction()" class="filtreaza" id="da1">show</button>
+        <!-- <button onclick="myFunction()" class="filtreaza" id="da1">show</button>
         <div class="sortare" style="display: none;" id="da">   
             <button onclick="myFunction1()" class="numaifiltra">show less</button>
             <ul class="parametru" onclick="sortare1()">Pret</ul>
             <ul class="parametru" onclick="sortare2()">Id</ul>
             <ul class="parametru" onclick="sortare3()">Cod</ul>
-        </div>
+        </div> -->
+        <div class="main" id="container">
+          <div id="CritIn">
+              <div class="filtre">Filtre:</div>
+              <button  onclick="myFunction()" class="hide-show" id="showMore">Show</button>
+          </div>
+          <div id="CritOut" style="display: none;">
+              <div class="filtre">Filtre:</div>
+              <div class="criterii">
+                  <button class="criteriu" id="pret" onclick="myFunction1()" >pret</button>
+                  <div class="pop" id="pop-up" style="display: none;">
+                      <button class="hide-show" onclick="myFunction1()">hide</button>
+                  </div>
+                  <button class="criteriu" type="button" >cod</button>
+                  <button class="criteriu" type="button" ></button>
+                  <button class="criteriu" type="button" ></button>
+                  <button class="criteriu" type="button" ></button>
+              </div>
+              <button  onclick="myFunction()" class="hide-show" id="showLess">Hide</button>
+          </div>
+      </div>
     </div>
 
     <!-- Modal pentru adaugare produse -->
