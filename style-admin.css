@@ -111,7 +111,6 @@ body {
     top: 10px;
     font-size: 30px;
     margin-bottom: 50px;
-
 }
 
 .parametru {
@@ -285,11 +284,9 @@ h2 {
 
 h2 {
     position: relative;
-  
 }
 
 .edit-item {
-    margin-left: 10%;
     background-color: rgb(243, 255, 80);
     width:37px;
     height:37px;
